@@ -171,12 +171,12 @@ img {
     }
 
     .main { 
-        width: max(60vw, 21rem); /*max(60vw, 20rem)*/ 
+        width: max(80vw, 21rem); /*max(60vw, 20rem)*/ 
         height: fit-content;
         margin: 3rem auto;
         display: grid;
         place-content: center;
-        grid-template-columns: max(50vw, 20rem); /*max(40vw, 18.5rem)*/
+        grid-template-columns: max(70vw, 20rem); /*max(40vw, 18.5rem)*/
         grid-template-rows: repeat(6,minmax(auto, max-content));
         row-gap: 1.25rem;
         grid-template-areas: "daniel" 
