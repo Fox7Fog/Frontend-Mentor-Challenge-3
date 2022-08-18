@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+}
+
+body {
+    width: 100%; /*min(1450px, 100%)*/
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    place-content: center;
+    background-color: hsl(210, 46%, 95%);
+}
+
+.main {
+    /*margin: 20 auto;*/
+    width: 80rem;
+    height: 40rem;
+    display: grid;
+    grid-template-columns: 18.5rem 18.5rem 18.5rem 18.5rem;
+    grid-template-rows: 19.375rem 19.375rem auto;
+    row-gap: 1.25rem;
+    column-gap: 2rem;
+    grid-template-areas: "daniel daniel jonathan kira"
+    "jeanette patrick patrick kira"
+    "footer footer footer footer";
+}
+
+.daniel,
+.jeanette,
+.jonathan,
+.kira,
+.patrick {
+    padding: 1.25rem 2rem 2rem 2rem;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    font-size: small;
+    line-height: 1.3;
+}
+
+.daniel {
+    grid-area: daniel;
+    background-color: hsl(263, 55%, 52%);
+    color: hsla(0, 0%, 100%, 0.3);
+    background-image: url(images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 80% 0%;
+    
+}
+
+.jonathan {
+    grid-area: jonathan;
+    background-color: hsl(217, 19%, 35%);
+    color: hsla(0, 0%, 100%, 0.3)
+    }
+
+.kira {
+    grid-area: kira;
+    background-color: hsl(0, 0%, 100%);
+    color: hsla(217, 19%, 35%, 0.5);
+}
+
+.jeanette {
+    grid-area: jeanette;
+    background-color: hsl(0, 0%, 100%);
+    color: hsla(217, 19%, 35%, 0.5);
+}
+
+.patrick {
+    grid-area: patrick;
+    background-color: hsl(219, 29%, 14%);
+    color: hsla(0, 0%, 100%, 0.3);
+}
+
+h1 {
+    font-size: 17px;
+    margin-top: 0;
+}
+
+.daniel h1,
+.jonathan h1,
+.patrick h1 {
+    color: hsl(0, 0%, 100%);
+}
+
+.kira h1,
+.jeanette h1 {
+    color: hsl(217, 19%, 35%);
+}
+
+.user {
+    display: inline-flex;
+    gap: 1.25rem;
+    align-items: center;
+    margin-top: 0;
+    padding-top: 0;
+    
+}
+
+.daniel .verified,
+.jonathan .verified,
+.patrick .verified {
+    color: hsla(0, 0%, 100%, 0.5);
+    font-size: smaller;
+}
+
+.kira .verified,
+.jeanette .verified {
+    color: hsla(217, 19%, 35%, 0.3);
+    font-size: smaller;
+}
+
+.daniel .name,
+.jonathan .name
+.patrick .name {
+    color: hsl(0, 0%, 100%);
+    font-size: small;
+}
+
+.kira .name,
+.jeanette .name {
+    color: hsl(217, 19%, 35%);
+    font-size: smaller;
+}
+
+img {
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    
+}
+
+.daniel img,
+.patrick img {
+    border-color: hsl(263, 55%, 70%);
+    width: 7%;
+}
+
+.kira img,
+.jeanette img,
+.jonathan img {
+    border-color: hsla(0, 0%, 100%, 0.5);
+    width: 15%;
+}
+
+.attribution {
+    grid-area: footer;
+    padding: 1.25rem;
+}
+
+.attribution a {
+    text-decoration: none;
+    color: hsl(263, 55%, 70%);
+}
+
+/*for mobile */
+
+@media screen and (max-width: 1060px) {
+    
+    body {
+        width: 100%; /*max(100vw, 20rem)*/
+        height: fit-content;
+        margin: 0;
+        display: grid;
+        place-content: center;
+        background-color: hsl(210, 46%, 95%);
+    }
+
+    .main {
+        width: max(60vw, 20rem); 
+        height: fit-content;
+        margin: 3rem auto;
+        display: grid;
+        place-content: center;
+        grid-template-columns: max(40vw, 18.5rem);
+        grid-template-rows: repeat(6,minmax(auto, max-content));
+        row-gap: 1.25rem;
+        grid-template-areas: "daniel" 
+        "jonathan "
+        "jeanette" 
+        "patrick" 
+        "kira"
+        "footer";
+    }   
+
+    .daniel img,
+    .patrick img {
+        width: 15%;
+    }
+}
+
